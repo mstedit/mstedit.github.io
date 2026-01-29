@@ -2,7 +2,6 @@
 <html>
 <head>
   <meta charset="utf-8">
-
   <!-- Meta tags for social media banners -->
   <meta name="description" content="DESCRIPTION META TAG">
   <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
@@ -27,17 +26,69 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <!-- 底部图片网格样式 -->
+  <style>
+    .results-section {
+      padding: 4rem 1.5rem;
+      background-color: #f5f5f5;
+    }
+    .results-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    .result-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .result-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+    .result-item img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+      border: 1px solid #eee;
+    }
+    .result-caption {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #555;
+      text-align: center;
+      font-weight: 500;
+    }
+    
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+      .results-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+
   <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
 </head>
@@ -50,29 +101,23 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-
           <h1 class="title is-1 publication-title">
-            Self-Prompting Diffusion Transformer for Open-Vocabulary Scene Text Edit via In-Context Learning
+            Self-Prompting Diffusion Transformer for Open-Vocabulary Scene Text Editing via In-Context Learning
           </h1>
-
           <div class="is-size-5 publication-authors has-text-centered">
             <span class="author-block">Anonymous Authors</span>
           </div>
-
           <!-- Paper button (non-clickable) -->
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
                 <span class="button is-normal is-rounded is-dark is-static">
-                  <span class="icon">
-                    <i class="fas fa-file-pdf"></i>
-                  </span>
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
                   <span>Paper</span>
                 </span>
               </span>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -129,14 +174,7 @@
         <div style="margin-top: 2.5rem; overflow: visible;">
           <img src="static/images/framework.png"
                alt="Method Framework"
-               style="
-                 display: block;
-                 max-width: 120%;
-                 height: auto;
-                 position: relative;
-                 left: 50%;
-                 transform: translateX(-50%);
-               ">
+               style="display: block; max-width: 120%; height: auto; position: relative; left: 50%; transform: translateX(-50%);">
         </div>
       </div>
     </div>
@@ -148,13 +186,46 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Comparisons with SOTA Methods</h2>
+        <h2 class="title is-3">Quantitative Results</h2>
         <div class="has-text-centered" style="margin-top: 2rem;">
-          <img src="static/images/table.jpg"
-               alt="Comparisons with SOTA Methods"
-               style="max-width: 100%; height: auto;">
+          <img src="static/images/table.jpg" alt="Comparisons with SOTA Methods" style="max-width: 100%; height: auto;">
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MORE QUALITATIVE RESULTS (MOVED TO BOTTOM) ===================== -->
+<section class="results-section">
+  <div class="results-container">
+    <h2 class="title is-3 has-text-centered">More Qualitative Results</h2>
+    <div class="results-grid">
+      
+      <!-- Item 1 -->
+      <div class="result-item">
+        <img src="static/images/ja.png" alt="Japanese result">
+      </div>
+
+      <!-- Item 2 -->
+      <div class="result-item">
+        <img src="static/images/ko.png" alt="Korean result">
+      </div>
+
+      <!-- Item 3 -->
+      <div class="result-item">
+        <img src="static/images/ru.png" alt="Russian result">
+      </div>
+
+      <!-- Item 4 -->
+      <div class="result-item">
+        <img src="static/images/zh.png" alt="Chinese result">
+      </div>
+
+      <!-- Item 5 -->
+      <div class="result-item">
+        <img src="static/images/en.png" alt="English result">
+      </div>
+
     </div>
   </div>
 </section>
